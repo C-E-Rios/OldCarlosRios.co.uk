@@ -1,0 +1,71 @@
+.contactInfoContainer {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  border-bottom: 2px dashed rgba(225, 225, 225, 0.6);
+  border-top: 2px dashed rgba(225, 225, 225, 0.6);
+}
+.contactForm p, label, legend {
+  color: #ffffff;
+}
+.contactForm input, .contactForm textarea {
+  color: #fdfdfd;
+  background: #17697f;
+  border: 1px solid #ffffff;
+  outline: none;
+  border-radius: 5px;
+  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  box-shadow: 0 0 5px rgba(23, 105, 207, 0);
+  -webkit-box-shadow: 0 0 5px rgba(23, 105, 207, 0);
+  -moz-box-shadow: 0 0 5px rgba(23, 105, 207, 0);
+}
+.contactForm input:focus, .contactForm textarea:focus {
+  border: 1px solid #ddd;
+  background-color: #17697f;
+  outline: none;
+  z-index: 5;
+  box-shadow: 0 0 5px rgba(23, 105, 207, 1);
+  -webkit-box-shadow: 0 0 5px rgba(23, 105, 207, 1);
+  -moz-box-shadow: 0 0 5px rgba(23, 105, 207, 1);
+  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+}
+.error>small, .error small.error {
+  float: left;
+  background: $warning-color!important;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.buttonSubmit {
+  width: auto;
+  cursor: pointer;
+  border: 1px solid #282828;
+  color: #fff;
+  padding: 6px 16px;
+  text-decoration: none;
+  background: rgba(27, 28, 29, 1);;
+  background: -webkit-gradient( linear, left bottom, left top, color-stop(0.12, rgb(27,28,29)), color-stop(1, rgb(37,38,39)) );
+  background: -moz-linear-gradient( center bottom, rgb(47,48,49) 12%, rgb(57,58,59) 100% );
+  box-shadow: 0 2px 3px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+}
+
+.buttonSubmit:hover {
+background: #282828 !important;
+transition: none;
+-webkit-transition: none;
+-moz-transition: none;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  padding: 0px 0 0 20px;
+  float: right;
+}

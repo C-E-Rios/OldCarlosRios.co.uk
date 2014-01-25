@@ -1,0 +1,62 @@
+/* Slide 2 */ 
+
+#services {
+  background-color: #ffffff;
+  // border-bottom: 20px solid rgba(31, 38, 41, 0.7);
+}
+.servicesWrap {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+#services h1 {
+  text-align: center;
+  font-size: rem-calc(84);
+}
+#services h4 {
+  color: #000000;
+  border-bottom: 2px dashed black;
+  padding-bottom: 2.5rem;
+}
+
+.servicesContainer {
+  padding-top: 1rem;
+}
+
+@media #{$small-only} {
+  #services h1, #services h4 {  
+    text-align: left;
+    padding-left: 0.5rem;
+  }
+  #services h1 {
+    font-size: rem-calc(48);
+  }
+  // .spade, .testTube, .googleAnalytics, .bullsEye {
+  //   padding-top: rem-calc(24);
+  // }
+}
+
+@media #{$portrait} {
+  #services h3 {
+    font-size: rem-calc(22);
+  }
+}
+
+
+@media #{$medium-only} {
+  #services h1 {
+    font-size: rem-calc(74);
+  }
+    #services h4 {  
+    text-align: center;
+  }
+  .spade, .testTube, .googleAnalytics, .bullsEye {
+    width: 50%;
+    padding-top: rem-calc(26);
+  }
+}
+
+@media #{$large-up} {
+  .spade, .testTube, .googleAnalytics, .bullsEye {
+    padding-top: rem-calc(26);
+  }
+}

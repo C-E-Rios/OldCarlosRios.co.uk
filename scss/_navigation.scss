@@ -1,0 +1,28 @@
+
+/* Navigation */
+
+#navigation {
+  display: none;
+  background-color:rgba(27, 28, 29, 1);
+  height: 70px;
+}
+
+.logo {
+  margin: -10px 0;
+}
+.navigation{
+  li {
+    text-align: right;
+    padding: 10px 0 0 0;
+    font-family: 'Arvo', cursive;
+    color: $primary-color;
+    cursor: pointer;
+  }
+  li:hover {
+    color: $secondary-color;
+  }
+}
+
+.navigation .active{
+  color: $secondary-color;
+}

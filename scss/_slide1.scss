@@ -1,0 +1,73 @@
+#home {
+  background-color:rgba(27, 28, 29, 1);
+  @media #{$medium-up} {
+    background-image:url('../images/bg1-1024.jpg');
+  }
+  @media #{$large-up} {
+    background-image:url('../images/bg1.jpg');
+  }
+  padding-bottom: 4rem;
+  text-align: center;
+  min-height: 100%;
+
+}
+.homeContainer {
+  height: 100%;
+  position: relative;
+}
+.fadeIn {
+  display: none;
+}
+#home h1 {
+  font-family: 'bree_serifregular', cursive;
+  opacity: 0.3;
+  color: #ffffff;
+}
+#home h3 {
+  color: #ffffff;
+}
+#home h4 {
+  padding: 20px;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  color: #ffffff;
+}
+.homeParaContainer {
+  padding: 1.5rem 0 1.5rem;
+}
+.successColor {
+  color: $success-color;
+}
+
+@media #{$small-only} {
+  .homeTwitter {
+    padding-top: 2rem;
+  } 
+  #home h1 {
+    line-height: rem-calc(44);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }  
+}
+
+@media #{$medium-only} {
+  #home {
+    padding-top: 4rem;
+  } 
+  #home h1 {
+    font-size: rem-calc(54);
+  }
+}
+
+@media #{$medium-up} {
+  .homeTwitter {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media #{$portrait} {
+  #home {
+    padding-top: 20%;
+  }
+}

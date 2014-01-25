@@ -1,40 +1,76 @@
-@import "settings";
-@import "foundation";
+html , body {
+  height: 100%;
+}
 
-// Or selectively include components
-// @import
-//   "foundation/components/accordion",
-//   "foundation/components/alert-boxes",
-//   "foundation/components/block-grid",
-//   "foundation/components/breadcrumbs",
-//   "foundation/components/button-groups",
-//   "foundation/components/buttons",
-//   "foundation/components/clearing",
-//   "foundation/components/dropdown",
-//   "foundation/components/dropdown-buttons",
-//   "foundation/components/flex-video",
-//   "foundation/components/forms",
-//   "foundation/components/grid",
-//   "foundation/components/inline-lists",
-//   "foundation/components/joyride",
-//   "foundation/components/keystrokes",
-//   "foundation/components/labels",
-//   "foundation/components/magellan",
-//   "foundation/components/orbit",
-//   "foundation/components/pagination",
-//   "foundation/components/panels",
-//   "foundation/components/pricing-tables",
-//   "foundation/components/progress-bars",
-//   "foundation/components/reveal",
-//   "foundation/components/side-nav",
-//   "foundation/components/split-buttons",
-//   "foundation/components/sub-nav",
-//   "foundation/components/switch",
-//   "foundation/components/tables",
-//   "foundation/components/tabs",
-//   "foundation/components/thumbs",
-//   "foundation/components/tooltips",
-//   "foundation/components/top-bar",
-//   "foundation/components/type",
-//   "foundation/components/offcanvas",
-//   "foundation/components/visibility";
+@import "settings";
+//@import "foundation";
+@import
+  "../bower_components/foundation/scss/foundation/components/block-grid",
+  "../bower_components/foundation/scss/foundation/components/clearing",
+  "../bower_components/foundation/scss/foundation/components/forms",
+  "../bower_components/foundation/scss/foundation/components/grid",
+  "../bower_components/foundation/scss/foundation/components/inline-lists",
+  "../bower_components/foundation/scss/foundation/components/labels",
+  "../bower_components/foundation/scss/foundation/components/magellan",
+  "../bower_components/foundation/scss/foundation/components/sub-nav",
+  "../bower_components/foundation/scss/foundation/components/switch",
+  "../bower_components/foundation/scss/foundation/components/offcanvas",
+  "../bower_components/foundation/scss/foundation/components/type",
+  "../bower_components/foundation/scss/foundation/components/visibility";
+
+@import "loader";
+@import "navigation";
+@import "slide";
+@import "slide1";
+@import "slide2";
+@import "slide3";
+@import "slide4";
+@import "form";
+@import "twitter";
+@import "footer";
+
+@font-face {
+  font-family: 'bree_serifregular';
+  src: url('../fonts/breeserif-regular-webfont.eot');
+  src: url('../fonts/breeserif-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/breeserif-regular-webfont.woff') format('woff'),
+       url('../fonts/breeserif-regular-webfont.ttf') format('truetype'),
+       url('../fonts/breeserif-regular-webfont.svg#bree_serifregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Arvo';
+  src: url('../fonts/arvo-bold-webfont.eot');
+  src: url('../fonts/arvo-bold-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/arvo-bold-webfont.woff') format('woff'),
+       url('../fonts/arvo-bold-webfont.ttf') format('truetype'),
+       url('../fonts/arvo-bold-webfont.svg#bree_serifregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+@import url("http://fonts.googleapis.com/css?family=Lobster+Two:700|Raleway:400");
+
+a:link {color: $primary-color;}
+a:hover {color: $secondary-color;}
+a:active {color: $secondary-color;}
+
+.row_v_align {
+  display: table;
+}
+.v_align {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+// fix to 2nd row in slides 2&4 being floated right
+.column.medium-centered, .columns.medium-centered {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  float: none !important; }

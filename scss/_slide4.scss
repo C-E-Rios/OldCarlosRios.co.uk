@@ -1,0 +1,83 @@
+
+
+/* Slide 4 */
+
+#contact{
+  background-color:#1c6e84;
+  color:#ffffff;
+  // border-bottom: 20px solid rgba(17, 67, 81, 0.8);
+  @media #{$medium-up} {
+    background-image:url('../images/bg4-1024.jpg');
+  }
+  @media #{$large-up} {
+    background-image:url('../images/bg4.jpg');
+  }
+  padding-top: 4rem;
+  padding-bottom: 8rem;
+  h1 {
+    font-size: rem-calc(85);
+  }
+  h4 {
+    font-size: rem-calc(18);
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+  min-height: 100%;
+}
+.contactContainer {
+
+  height: 100%;
+
+}
+
+#contact h1, h4.subheader {
+  color:#ffffff;
+  text-align: center;
+}
+
+
+
+@media #{$small-only} { 
+  #contact h1, #contact h4 {
+    padding-left: 0.5rem;
+  }
+  #contact h1 {
+    font-size: rem-calc(48);
+  }
+  #contact h4 {
+    text-align: left;
+    font-size: rem-calc(17);
+  }
+  .contactTxt {
+    width: 180px;
+  }
+
+}
+
+@media #{$small-up} { 
+  .contactTxt {
+    padding-left: 0.5rem;
+  }
+}
+
+@media #{$medium-only} { 
+  #contact h1 {
+    font-size: rem-calc(80);
+  }
+  .contactTxt {
+    font-size: rem-calc(12);
+    height: 60px!important;
+  }
+}
+
+@media #{$large-up} { 
+  .contactTxt {
+    height: 60px!important;
+  }
+}
+
+@media #{$portrait} {
+  .contactContainer {
+    padding-top: 23%;
+  }
+}

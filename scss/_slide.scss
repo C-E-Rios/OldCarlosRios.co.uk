@@ -1,0 +1,39 @@
+.slide{
+  background-attachment: fixed;
+  position: relative;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  h1 {
+    font-family: 'Arvo', cursive;
+  }
+  .subheader {
+    font-family: 'Raleway', sans-serif;
+  }
+}
+
+
+@media #{$small-up} { 
+  .slide {
+      padding:2rem 0;
+  }
+  .slide h1 {
+    font-size: rem-calc(40);
+  }
+}
+
+@media #{$medium-only} {
+  .slide h1 {
+    font-size: rem-calc(70);
+  } 
+}
+
+@media #{$large-up} {
+  .slide {
+    padding:4rem 0;
+  }
+  .slide h1 {
+    font-size: rem-calc(85);
+  } 
+}
