@@ -3,6 +3,12 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    
+    clean: {
+      dist: {
+        src: ['dist/*']
+      },
+    },
 
     sass: {
       options: {
@@ -18,22 +24,93 @@ module.exports = function(grunt) {
       }
     },
 
-    clean: {
+    uncss: {
       dist: {
-        src: ['dist/*']
+        files: {
+          'dist/css/app.css': ['index.html']
+        }
       },
+      options: {
+        ignore: ['.removeDivs', '.nav', '#navigation', '.active']
+      }
     },
+
+
+    jshint: {
+      all: 'js/*.js'
+    },
+  
+    useminPrepare: {
+      html: '*.html',
+      options: {
+        dest: 'dist'
+      }
+    },
+
+    uglify: {
+      my_target: {
+        files: {
+          'dist/js/app.js': ['js/*.js'],
+          'dist/js/vendor/modernizr.js': ['bower_components/js/foundation/modernizr.js'],
+          'dist/js/plugins/scripts.js': ['js/plugins/*.js']
+        }
+      }
+    },
+
+    imagemin: {
+      dist: {
+        options: {
+          cache: false
+        },
+        files: [{
+          expand: true,
+          cwd: 'images',
+          src: ['*.{png,jpg,gif}'],
+          dest: 'dist/images/'
+        }]
+      }
+    },
+
+    includes: {
+      files: {
+        src: ['*.html'],
+        dest: 'dist',
+        flatten: true,
+        cwd: '.',
+        options: {
+          silent: true,
+        }
+      }
+    },
+
+    usemin: {
+      html: ['dist/*.html'],
+      css: ['dist/css/*.css'],
+      options: {
+        dest: 'dist'
+      }
+    },
+
+    cssmin: {
+      minify: {
+        expand: true,
+        cwd: 'dist/css/',
+        src: ['*.css', '!*.min.css'],
+        dest: 'dist/css/',
+      }
+    },
+
     copy: {
       dist: {
         files: [{
           expand: true,
           cwd:'',
-          src: ['css/**', 'js/**', 'images/**', 'fonts/**', '**/*.html', '!**/*.scss', '!bower_components/**'],
+          src: ['css/**', 'images/**', 'fonts/**', '!**/*.scss', '!bower_components/**'],
           dest: 'dist/'
         }, {
           expand: true,
           flatten: true,
-          src: ['bower_components/jquery/jquery.min.js', 'bower_components/modernizr/modernizr.js'],
+          src: ['bower_components/jquery/jquery.min.js'],
           dest: 'dist/js/vendor/',
           filter: 'isFile'
         }, {
@@ -45,21 +122,7 @@ module.exports = function(grunt) {
         }]
       },
     },
-
-    useminPrepare: {
-      html: '*.html',
-      options: {
-        dest: 'dist'
-      }
-    },
-
-    usemin: {
-      html: ['dist/*.html'],
-      css: ['dist/css/*.css'],
-      options: {
-        dirs: ['dist']
-      }
-    },
+    
     watch: {
       grunt: { files: ['Gruntfile.js'] },
 
@@ -96,17 +159,23 @@ module.exports = function(grunt) {
   });
 
 
-
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-includes');
+  grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-uncss');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-usemin');
 
 
-  grunt.registerTask('build', ['sass']);
+
+  grunt.registerTask('build', ['sass', 'jshint', 'uglify']);
   grunt.registerTask('default', ['build', 'connect:app', 'watch']);
   grunt.registerTask('server-dist', ['connect:dist']);
-  grunt.registerTask('publish', ['clean:dist', 'useminPrepare', 'copy:dist', 'usemin']);
+  grunt.registerTask('publish', ['clean:dist', 'useminPrepare', 'build', 'imagemin', 'includes', 'usemin', 'copy:dist']);
 }

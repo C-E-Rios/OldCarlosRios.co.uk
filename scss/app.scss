@@ -74,3 +74,10 @@ a:active {color: $secondary-color;}
   margin-left: auto;
   margin-right: auto;
   float: none !important; }
+
+// remove weird jump
+.removeDivs div:nth-child(n+2) {
+  display: none!important;
+  height: 0!important;
+}
+

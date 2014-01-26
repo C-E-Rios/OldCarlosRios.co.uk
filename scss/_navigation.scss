@@ -10,7 +10,7 @@
 .logo {
   margin: -10px 0;
 }
-.navigation{
+.nav {
   li {
     text-align: right;
     padding: 10px 0 0 0;
@@ -23,6 +23,7 @@
   }
 }
 
-.navigation .active{
+
+.nav .active{
   color: $secondary-color;
 }
